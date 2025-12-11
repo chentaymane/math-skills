@@ -1,3 +1,3 @@
-module main
+module opertaions
 
 go 1.22.3
