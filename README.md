@@ -179,5 +179,3 @@ Standard Deviation: 11
 Pull requests are welcome. Keep outputs deterministic and maintain the exact output format.
 
 ---
-
-Tell me which you prefer and I'll add it to the repo content.
