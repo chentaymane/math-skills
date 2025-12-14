@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"math"
 	"os"
 	"strings"
 
@@ -19,6 +20,10 @@ func main() {
 		fmt.Println(err)
 		return
 	}
+	if len(file) == 0 {
+		fmt.Println("incorect input")
+		return
+	}
 	splite := strings.Fields(string(file))
 	numbers, err := opertaions.Convert(splite)
 	if err != nil {
@@ -26,13 +31,13 @@ func main() {
 		return
 	}
 
-	Average := opertaions.Average(numbers)
+	Average, Average2 := opertaions.Average(numbers)
 	median := opertaions.Median(numbers)
-	variance := opertaions.Variance(numbers, Average)
+	variance := opertaions.Variance(numbers, Average2)
 	StandardDeviation := opertaions.StandardDeviation(variance)
 
 	fmt.Println("Average:", Average)
 	fmt.Println("Median:", median)
-	fmt.Println("Variance:", variance)
-	fmt.Println("Standard Deviation:", StandardDeviation)
+	fmt.Println("Variance:", int(math.Round(variance)))
+	fmt.Println("Standard Deviation:", int(math.Round(StandardDeviation)))
 }

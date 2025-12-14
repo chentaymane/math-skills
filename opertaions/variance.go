@@ -1,14 +1,11 @@
 package opertaions
 
-import "math"
-
-func Variance(numbers []int, Average int) int {
+func Variance(numbers []int, Average float64) float64 {
 	var variance float64
-
 	for _, r := range numbers {
-		nmbr := r - Average
-		variance += float64(nmbr * nmbr)
+		nmbr := float64(r) - Average
+		variance += nmbr * nmbr
 	}
 	variance = variance / float64(len(numbers))
-	return int(math.Round(variance))
+	return variance
 }

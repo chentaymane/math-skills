@@ -10,16 +10,8 @@ func sum(s []int) float64 {
 	return total
 }
 
-func Average(numbers []int) int {
+func Average(numbers []int) (int, float64) {
 	var Average float64
-
-	for i := 0; i < len(numbers); i++ {
-		for j := i + 1; j < len(numbers); j++ {
-			if numbers[j] < numbers[i] {
-				numbers[i], numbers[j] = numbers[j], numbers[i]
-			}
-		}
-	}
 	Average = sum(numbers) / float64(len(numbers))
-	return int(math.Round(Average))
+	return int(math.Round(Average)), Average
 }
